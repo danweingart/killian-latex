@@ -415,12 +415,22 @@
 /* ============================================
    TILES / CARDS
    ============================================ */
+.cds-tile-row {
+  align-items: stretch;
+}
+
+.cds-tile-row > [class*="cds-col"] {
+  display: flex;
+  flex-direction: column;
+}
+
 .cds-tile {
   background: var(--cds-gray-10);
   padding: var(--cds-spacing-07);
   min-height: 240px;
   display: flex;
   flex-direction: column;
+  flex: 1;
   transition: background-color 0.15s;
   text-decoration: none;
   color: var(--cds-gray-100);
