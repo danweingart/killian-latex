@@ -2,20 +2,25 @@
    MOBILE NAVIGATION
    ============================================ */
 (function() {
-  const menuBtn = document.querySelector('.cds-header__menu-btn');
-  const sideNav = document.querySelector('.cds-side-nav');
-  const overlay = document.querySelector('.cds-nav-overlay');
+  var menuBtn = document.querySelector('.cds-header__menu-btn');
+  var sideNav = document.querySelector('.cds-side-nav');
+  var overlay = document.querySelector('.cds-nav-overlay');
+  var closeBtn = sideNav ? sideNav.querySelector('.cds-side-nav__close-btn') : null;
 
   if (!menuBtn || !sideNav || !overlay) return;
+
+  var hamburgerSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2 4.5h16M2 10h16M2 15.5h16" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>';
+  var closeSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>';
 
   function openNav() {
     sideNav.classList.add('is-open');
     overlay.classList.add('is-visible');
     menuBtn.setAttribute('aria-expanded', 'true');
+    menuBtn.setAttribute('aria-label', 'Close navigation menu');
+    menuBtn.innerHTML = closeSVG;
     document.body.style.overflow = 'hidden';
 
-    // Focus first link
-    const firstLink = sideNav.querySelector('a');
+    var firstLink = sideNav.querySelector('a');
     if (firstLink) firstLink.focus();
   }
 
@@ -23,14 +28,18 @@
     sideNav.classList.remove('is-open');
     overlay.classList.remove('is-visible');
     menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', 'Open navigation menu');
+    menuBtn.innerHTML = hamburgerSVG;
     document.body.style.overflow = '';
     menuBtn.focus();
   }
 
   menuBtn.addEventListener('click', function() {
-    const isOpen = sideNav.classList.contains('is-open');
+    var isOpen = sideNav.classList.contains('is-open');
     isOpen ? closeNav() : openNav();
   });
+
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
 
   overlay.addEventListener('click', closeNav);
 

@@ -21,6 +21,7 @@ body {
   background-color: var(--cds-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 img {
@@ -177,6 +178,10 @@ ul, ol {
 
 /* Responsive type */
 @media (max-width: 671px) {
+  .cds-grid {
+    padding: 0 var(--cds-spacing-05);
+  }
+
   .cds-heading-07 {
     font-size: 2.25rem;
   }
@@ -197,6 +202,16 @@ ul, ol {
 
 .section-padding--compact {
   padding: var(--cds-spacing-10) 0;
+}
+
+@media (max-width: 671px) {
+  .section-padding {
+    padding: var(--cds-spacing-09) 0;
+  }
+
+  .section-padding--compact {
+    padding: var(--cds-spacing-08) 0;
+  }
 }
 
 /* === Backgrounds === */
