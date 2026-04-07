@@ -1,0 +1,225 @@
+/* === Reset === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--cds-font-family);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--cds-gray-100);
+  background-color: var(--cds-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--cds-blue-60);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* === Skip Link === */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--cds-spacing-05);
+  background: var(--cds-blue-60);
+  color: var(--cds-white);
+  padding: var(--cds-spacing-03) var(--cds-spacing-05);
+  z-index: 1000;
+  font-size: 0.875rem;
+}
+
+.skip-link:focus {
+  top: var(--cds-spacing-03);
+}
+
+/* === Grid === */
+.cds-grid {
+  max-width: 1584px;
+  margin: 0 auto;
+  padding: 0 var(--cds-spacing-07);
+}
+
+.cds-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 calc(var(--cds-spacing-05) * -1);
+}
+
+[class*="cds-col"] {
+  padding: 0 var(--cds-spacing-05);
+  width: 100%;
+}
+
+/* Column widths — mobile first (all 100%) */
+.cds-col-sm-4  { width: 100%; }
+.cds-col-sm-8  { width: 100%; }
+.cds-col-sm-16 { width: 100%; }
+
+/* Medium — 672px */
+@media (min-width: 672px) {
+  .cds-col-md-4  { width: 25%; }
+  .cds-col-md-5  { width: 31.25%; }
+  .cds-col-md-6  { width: 37.5%; }
+  .cds-col-md-8  { width: 50%; }
+  .cds-col-md-10 { width: 62.5%; }
+  .cds-col-md-12 { width: 75%; }
+  .cds-col-md-16 { width: 100%; }
+}
+
+/* Large — 1056px */
+@media (min-width: 1056px) {
+  .cds-grid {
+    padding: 0 var(--cds-spacing-07);
+  }
+
+  .cds-col-lg-4  { width: 25%; }
+  .cds-col-lg-5  { width: 31.25%; }
+  .cds-col-lg-6  { width: 37.5%; }
+  .cds-col-lg-8  { width: 50%; }
+  .cds-col-lg-10 { width: 62.5%; }
+  .cds-col-lg-12 { width: 75%; }
+  .cds-col-lg-16 { width: 100%; }
+}
+
+/* XLarge — 1312px */
+@media (min-width: 1312px) {
+  .cds-col-xlg-4  { width: 25%; }
+  .cds-col-xlg-5  { width: 31.25%; }
+  .cds-col-xlg-6  { width: 37.5%; }
+  .cds-col-xlg-8  { width: 50%; }
+  .cds-col-xlg-10 { width: 62.5%; }
+  .cds-col-xlg-12 { width: 75%; }
+  .cds-col-xlg-16 { width: 100%; }
+}
+
+/* === Typography Scale === */
+.cds-display-01 {
+  font-size: 2.625rem;
+  font-weight: 300;
+  line-height: 1.17;
+  letter-spacing: 0;
+}
+
+.cds-heading-07 {
+  font-size: 3.375rem;
+  font-weight: 300;
+  line-height: 1.17;
+}
+
+.cds-heading-05 {
+  font-size: 2.25rem;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.cds-heading-04 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1.29;
+}
+
+.cds-heading-03 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.cds-heading-02 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.375;
+}
+
+.cds-body-long-02 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.cds-body-long-01 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.43;
+}
+
+.cds-label-01 {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.34;
+  letter-spacing: 0.32px;
+}
+
+/* Responsive type */
+@media (max-width: 671px) {
+  .cds-heading-07 {
+    font-size: 2.25rem;
+  }
+
+  .cds-heading-05 {
+    font-size: 1.75rem;
+  }
+
+  .cds-heading-04 {
+    font-size: 1.5rem;
+  }
+}
+
+/* === Section Spacing === */
+.section-padding {
+  padding: var(--cds-spacing-12) 0;
+}
+
+.section-padding--compact {
+  padding: var(--cds-spacing-10) 0;
+}
+
+/* === Backgrounds === */
+.bg-white   { background-color: var(--cds-white); }
+.bg-gray-10 { background-color: var(--cds-gray-10); }
+.bg-gray-100 { background-color: var(--cds-gray-100); }
+
+/* === Scroll Animation === */
+.cds-fade-in {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.cds-fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cds-fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
